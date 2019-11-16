@@ -3,6 +3,7 @@ package com.kishannareshpal;
 import com.kishannareshpal.utils.CommandLineTable;
 import com.kishannareshpal.utils.Helper;
 import com.kishannareshpal.utils.Validator;
+import com.kishannareshpal.utils.VerticalComandLineTable;
 
 import java.util.*;
 import java.util.function.Predicate;
@@ -297,6 +298,17 @@ public class PRSystem {
                 String jobDepartment = emp.getJobDepartment();
                 String contractType = emp.getContractType();
                 int netDue;
+
+//                // TODO: verticalCLITable
+//                VerticalComandLineTable vclt = new VerticalComandLineTable();
+//                vclt.addRow("Name", "Kishan Nareshpal Jadav");
+//                vclt.addRow("Date", "08/08/1999");
+//                vclt.addRow("Age", "21");
+//                vclt.addSeparator();
+//                vclt.addRow("Total", "£123,000");
+//                vclt.show();
+//                // TODO-END;
+
 
                 // todo: calculate and show the correct ammount.
                 switch (emp.getTypeOfEmployee()) {

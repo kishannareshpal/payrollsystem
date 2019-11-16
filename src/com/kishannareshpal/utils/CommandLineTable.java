@@ -36,8 +36,7 @@ public class CommandLineTable {
     }
 
     public void print() {
-        int[] maxWidths = headers != null ?
-                Arrays.stream(headers).mapToInt(String::length).toArray() : null;
+        int[] maxWidths = headers != null ? Arrays.stream(headers).mapToInt(String::length).toArray() : null;
 
         for (String[] cells : rows) {
             if (maxWidths == null) {
