@@ -18,6 +18,12 @@ class Row {
         this.description = description;
     }
 
+    public Row(String description) {
+        this.isSeparator = false;
+        this.title = null;
+        this.description = description;
+    }
+
     public boolean isSeparator() {
         return isSeparator;
     }
@@ -67,7 +73,7 @@ class Dimension {
 }
 
 public class VerticalComandLineTable {
-    // Statics
+    // Static Vars
     private static String WHITESPACE = " ";
     private static String TABLE_UI_HORIZONTAL_SEP = "-";
     private static String TABLE_UI_CORNER = "+";
@@ -83,18 +89,52 @@ public class VerticalComandLineTable {
     }
 
     // Methods
+    /**
+     * Add a new Row with title and description;
+     * Outputs:
+       +------------------------+
+       | TITLE | DESCRIPTION    |
+       +------------------------+
+
+     * @param title the title. first column.
+     * @param description the description. second column.
+     */
     public VerticalComandLineTable addRow(String title, String description) {
         Row row = new Row(title, description);
         rowsList.add(row);
         return this;
     }
 
+    /**
+     * Add a new Row with description only;
+     * Outputs:
+       +------------------------+
+       | DESCRIPTION ONLY       |
+       +------------------------+
+
+     * @param description the description. second column.
+     */
+    public VerticalComandLineTable addRow(String description) {
+        Row row = new Row(description);
+        rowsList.add(row);
+        return this;
+    }
+
+    /**
+     * Add a separator to the table;
+     * Outputs:
+       +------------------------+
+     */
     public VerticalComandLineTable addSeparator() {
         Row row = new Row(true);
         rowsList.add(row);
         return this;
     }
 
+    /**
+     * Prints the table to the console.
+     * Must be called last. Or after an update to the table's row.
+     */
     public VerticalComandLineTable show() {
         Dimension tableDimen = getTableDimensions();
         int tableWidth = tableDimen.getWidth();
@@ -113,20 +153,37 @@ public class VerticalComandLineTable {
             }
 
             String title = row.getTitle();
-            String desc  = row.getDescription();
+            String titleCol;
+            if (title != null) {
+                // has title and description set.
+                titleCol = " " + title + repeater((titleWidth) - title.length(), WHITESPACE) + " ";
 
-            String titleCol = " " + title + repeater((titleWidth) - title.length(), WHITESPACE) + " ";
+            } else {
+                // has only description set. title is null/not set.
+                titleCol = null;
+            }
+
+            String desc  = row.getDescription();
             String descCol  = " " + desc + repeater((descWidth+gap) - desc.length(), WHITESPACE) + " ";
-            String theRow = TABLE_UI_VERTICAL_SEP + titleCol + TABLE_UI_VERTICAL_SEP + descCol + TABLE_UI_VERTICAL_SEP;
+
+            String theRow;
+            if (title != null) {
+                // has title and description set.
+                theRow = TABLE_UI_VERTICAL_SEP + titleCol + TABLE_UI_VERTICAL_SEP + descCol + TABLE_UI_VERTICAL_SEP;
+
+            } else {
+                // has only description set. title is null/not set.
+                theRow = TABLE_UI_VERTICAL_SEP + descCol + TABLE_UI_VERTICAL_SEP;
+            }
             System.out.println(theRow);
         }
         System.out.println(table_ui_line);
         return this;
     }
 
+
     /**
      * Returns the final table dimens (eif
-     *
      * @return the dimensions of the final table.
      */
     public Dimension getTableDimensions() {

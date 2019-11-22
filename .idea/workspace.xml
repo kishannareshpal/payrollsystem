@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d8335ee-1681-484f-b9c3-c063c342f41a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/kishannareshpal/utils/VerticalComandLineTable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/payrollsystem/com/kishannareshpal/PRSystem$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/payrollsystem/com/kishannareshpal/PRSystem$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/payrollsystem/com/kishannareshpal/PRSystem$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/payrollsystem/com/kishannareshpal/PRSystem$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/payrollsystem/com/kishannareshpal/PRSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/payrollsystem/com/kishannareshpal/PRSystem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/payrollsystem/com/kishannareshpal/utils/CommandLineTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/payrollsystem/com/kishannareshpal/utils/CommandLineTable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/kishannareshpal/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kishannareshpal/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/kishannareshpal/PRSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kishannareshpal/PRSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/kishannareshpal/utils/CommandLineTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kishannareshpal/utils/CommandLineTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/kishannareshpal/utils/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kishannareshpal/utils/Helper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/kishannareshpal/utils/Validator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kishannareshpal/utils/Validator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/kishannareshpal/utils/VerticalComandLineTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kishannareshpal/utils/VerticalComandLineTable.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,6 +38,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Kishan Nareshpal &lt;kishan_jadav&quot;hotmail.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1SjPuteAn3cmYaz0iUrPE6oiqk9" />
@@ -49,6 +53,7 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="ToolWindowRun.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -133,6 +138,7 @@
       <workItem from="1573068151112" duration="5315000" />
       <workItem from="1573498211009" duration="23974000" />
       <workItem from="1573835013329" duration="10428000" />
+      <workItem from="1574181676384" duration="8055000" />
     </task>
     <servers />
   </component>

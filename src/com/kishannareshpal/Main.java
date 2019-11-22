@@ -18,23 +18,53 @@ public class Main {
         employeeList = new ArrayList<>();
 
         // Populate some fake users by default;
-        for (int i = 0; i < 10; i++) {
-            Employee employee = new Employee();
-            employee.setId(String.valueOf(i));
-            employee.setDob("08/08/1999");
-            employee.setFirstName("Kishan");
-            employee.setNino("SX123456" + i);
-            employee.setLastName(String.valueOf(i));
-            employee.setTypeOfEmployee(Employee.EMPLOYEE_TYPE_SALARIED);
-            employee.setJobTitle("CEO");
-            employee.setJobDepartment("Production");
-            employee.setContractType("Full Time");
-            employee.setAnnualSalary("20000");
-            employee.setAnnualGrossSalary("N/A");
-            employee.setCommissionRate("N/A");
+        Employee employee2 = new Employee();
+        employee2.setId("2");
+        employee2.setDob("08/08/1999");
+        employee2.setFirstName("Kishan");
+        employee2.setNino("SX123456" + 4);
+        employee2.setLastName(String.valueOf(4));
+        employee2.setTypeOfEmployee(Employee.EMPLOYEE_TYPE_SALARIED);
+        employee2.setJobTitle("CEO");
+        employee2.setJobDepartment("Production");
+        employee2.setContractType("Full Time");
+        employee2.setAnnualSalary("20000");
+        employee2.setAnnualGrossSalary("N/A");
+        employee2.setCommissionRate("N/A");
+        employeeList.add(employee2);
 
-            employeeList.add(employee);
-        }
+
+        Employee employee3 = new Employee();
+        employee3.setId("3");
+        employee3.setDob("08/08/1999");
+        employee3.setFirstName("Kishan");
+        employee3.setNino("SX123456" + 3);
+        employee3.setLastName(String.valueOf(4));
+        employee3.setTypeOfEmployee(Employee.EMPLOYEE_TYPE_HOURLY);
+        employee3.setJobTitle("CEO");
+        employee3.setJobDepartment("Production");
+        employee3.setContractType("Full Time");
+        employee3.setAnnualSalary("N/A");
+        employee3.setHourlyPayRate("8.20");
+        employee3.setAnnualGrossSalary("N/A");
+        employee3.setCommissionRate("N/A");
+        employeeList.add(employee3);
+
+
+        Employee employee6 = new Employee();
+        employee6.setId("1");
+        employee6.setDob("08/08/1999");
+        employee6.setFirstName("Kishan");
+        employee6.setNino("SX123456" + 5);
+        employee6.setLastName(String.valueOf(5));
+        employee6.setTypeOfEmployee(Employee.EMPLOYEE_TYPE_COMMISSION);
+        employee6.setJobTitle("CEO");
+        employee6.setJobDepartment("Production");
+        employee6.setContractType("Full Time");
+        employee6.setAnnualSalary("N/A");
+        employee6.setAnnualGrossSalary("24000");
+        employee6.setCommissionRate("5.6");
+        employeeList.add(employee6);
         
         do {
             System.out.println();

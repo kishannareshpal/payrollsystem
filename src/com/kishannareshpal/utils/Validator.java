@@ -43,7 +43,7 @@ public class Validator {
             Date d = sdf.parse(date);
             cal.setTime(d);
         } catch (ParseException e) {
-            System.err.println(!Helper.isNullOrEmpty(fieldName) ? fieldName + " cannot contain any special characters or numbers. It must only contain Letters." : "This cannot contain any special characters or numbers. It must only contain Letters.");
+            System.err.println(!Helper.isNullOrEmpty(fieldName) ? fieldName + " is invalid. Please enter the Date Of Birth in the correct format." : "Invalid date. Please enter the date of birth in the correct format.");
             return null;
         }
 

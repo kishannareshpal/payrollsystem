@@ -271,17 +271,18 @@ public class PRSystem {
 
 
                 String typeOfEmployee = emp.getTypeOfEmployee();
+                Double totalHours = 0.0; // for hourly employee;
+                Double totalSales = 0.0; // for commission employee;
 
-                String totalHours = "0", totalSales = "0"; // todo: store these variables as int/double instead
                 switch (typeOfEmployee) {
                     case Employee.EMPLOYEE_TYPE_HOURLY:
-                        System.out.print("Total time:");
-                        totalHours = scn.nextLine(); // todo: validate this (to only accept number/double)
+                        System.out.print("Total hours worked: ");
+                        totalHours = Double.parseDouble(scn.nextLine()); // todo: validate this (to only accept number/double)
                         break;
 
                     case Employee.EMPLOYEE_TYPE_COMMISSION:
-                        System.out.println("Total sales:"); // todo: validate this (to only accept number/double)
-                        totalSales = scn.nextLine();
+                        System.out.println("Total sales made:"); // todo: validate this (to only accept number/double)
+                        totalSales = Double.parseDouble(scn.nextLine());
                         break;
                 }
                 System.out.println();
@@ -297,38 +298,32 @@ public class PRSystem {
                 String jobTitle = emp.getJobTitle();
                 String jobDepartment = emp.getJobDepartment();
                 String contractType = emp.getContractType();
-                int netDue;
 
-//                // TODO: verticalCLITable
-//                VerticalComandLineTable vclt = new VerticalComandLineTable();
-//                vclt.addRow("Name", "Kishan Nareshpal Jadav");
-//                vclt.addRow("Date", "08/08/1999");
-//                vclt.addRow("Age", "21");
-//                vclt.addSeparator();
-//                vclt.addRow("Total", "£123,000");
-//                vclt.show();
-//                // TODO-END;
-
-
-                // todo: calculate and show the correct ammount.
+                double netDue;
+                double taxedIncome;
                 switch (emp.getTypeOfEmployee()) {
                     case Employee.EMPLOYEE_TYPE_SALARIED:
                         table.setHeaders("Payslip Reference (ID)", "Full Name", "Employee Type", "NINO", "Job Title", "Job Dept.", "Contract Type", "Net Due (£)");
-                        int annualSalary = Integer.parseInt(emp.getAnnualSalary());
-                        netDue = annualSalary / 52; // There are approx. 52 weeks in a year.
+                        double annualSalary = Double.parseDouble(emp.getAnnualSalary());
+                        taxedIncome = annualSalary - Helper.calculateTax(annualSalary);
+                        netDue = taxedIncome / 12;
                         table.addRow(id, fullname, typeOfEmployee, nino, jobTitle, jobDepartment, contractType, String.valueOf(netDue));
                         break;
 
                     case Employee.EMPLOYEE_TYPE_HOURLY:
-                        table.setHeaders("Payslip Reference (ID)", "Full Name", "Employee Type", "NINO", "Job Title", "Job Dept.", "Contract Type", "Total Hours", "Net Due (£)");
-                        netDue = Integer.parseInt(emp.getHourlyPayRate()) * Integer.parseInt(totalHours); // total numbers of hours multiplied by the hourlypayrate
+                        table.setHeaders("Payslip Reference (ID)", "Full Name", "Employee Type", "NINO", "Job Title", "Job Dept.", "Contract Type", "Net Due (£)");
+                        double hourlyPayRate = Double.parseDouble(emp.getHourlyPayRate());
+                        double totalIncome = (hourlyPayRate * totalHours);
+                        netDue = totalIncome - Helper.calculateTax(totalIncome);
                         table.addRow(id, fullname, typeOfEmployee, nino, jobTitle, jobDepartment, contractType, String.valueOf(netDue));
                         break;
 
                     case Employee.EMPLOYEE_TYPE_COMMISSION:
                         table.setHeaders("Payslip Reference (ID)", "Full Name", "Employee Type", "NINO", "Job Title", "Job Dept.", "Contract Type", "Net Due (£)");
-                        int annualGrossSalary = Integer.parseInt(emp.getAnnualGrossSalary());
-                        netDue = annualGrossSalary / 52; // todo: use the proper equation here.
+                        double annualGrossSalary = Double.parseDouble(emp.getAnnualGrossSalary());
+                        double commissionRate = Double.parseDouble(emp.getCommissionRate());
+                        taxedIncome = (annualGrossSalary - Helper.calculateTax(annualGrossSalary)) / 12;
+                        netDue = (taxedIncome + (commissionRate * totalSales));
                         table.addRow(id, fullname, typeOfEmployee, nino, jobTitle, jobDepartment, contractType, String.valueOf(netDue));
                         break;
                 }

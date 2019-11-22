@@ -73,4 +73,24 @@ public class Helper {
             return str;
         }
     }
+
+    public static double calculateTax(double income) {
+        double taxPercentage = 0.0;
+        if (income < 12500) {
+            // no tax is deduced.
+            taxPercentage = 0.0;
+
+        } else if (income >= 12501 && income <= 50000) {
+            // 20% of the annual income.
+            taxPercentage = 0.2;
+
+        } else if (income >= 50001 && income <= 150000){
+            // 40% of the annual income.
+            taxPercentage = 0.4;
+        } else if (income > 150000) {
+            // 45% of the annual income.
+            taxPercentage = 0.45;
+        }
+        return income * taxPercentage;
+    }
 }
