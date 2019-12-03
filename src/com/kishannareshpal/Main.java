@@ -28,7 +28,7 @@ public class Main {
         employee2.setJobTitle("CEO");
         employee2.setJobDepartment("Production");
         employee2.setContractType("Full Time");
-        employee2.setAnnualSalary("20000");
+        employee2.setAnnualSalary("200000");
         employee2.setAnnualGrossSalary("N/A");
         employee2.setCommissionRate("N/A");
         employeeList.add(employee2);
@@ -62,7 +62,7 @@ public class Main {
         employee6.setJobDepartment("Production");
         employee6.setContractType("Full Time");
         employee6.setAnnualSalary("N/A");
-        employee6.setAnnualGrossSalary("24000");
+        employee6.setAnnualGrossSalary("240000");
         employee6.setCommissionRate("5.6");
         employeeList.add(employee6);
         
